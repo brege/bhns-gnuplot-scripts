@@ -1,0 +1,6 @@
+# output images
+images/
+*.png
+*.svg
+*.pdf
+*.jpg
