@@ -4,3 +4,6 @@ images/
 *.svg
 *.pdf
 *.jpg
+
+# temporary files from editors
+*.swp
