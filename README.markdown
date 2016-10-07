@@ -21,5 +21,11 @@ set output 'latex/restmass-sd.tex'
 replot
 ```
 
+* You can output all your pngs with a single command
+```
+load 'make-images.cfg'
+```
+  then just rsync `images/` over.
+
 * Once in a while, update all the `JoinedLev1` directories using `../scripts/rejoinsegments.sh`
 
