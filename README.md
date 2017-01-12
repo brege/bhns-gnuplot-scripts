@@ -22,10 +22,15 @@ replot
 ```
 
 * You can output all your pngs with a single command
-```
+``` 
 load 'make-images.cfg'
 ```
   then just rsync `images/` over.
+
+* You can execute a gnuplot shell command from the bash terminal (may be useful for cronjobs/automation):
+``` bash
+gnuplot -e "load 'make-images.cfg'"
+```
 
 * Once in a while, update all the `JoinedLev1` directories using `../scripts/rejoinsegments.sh`
 
