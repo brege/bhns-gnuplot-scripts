@@ -1,0 +1,19 @@
+# load palette config
+load 'styles.gpi'
+# load presets
+load 'run-paths-and-times.gpi'
+load 'unit-conversions.gpi'
+
+set title 'Ratio of total subdomains/cores for hydro-AMR runs'
+set xlabel '$t - t_{\rm settledisk}$ (ms)'
+set ylabel 'Ratio of subdomains/cores'
+set ytics nomirror
+
+set key top right
+
+data='DomainInfo.dat'
+set xrange [0:3]
+set macros
+col2="$3/$2"
+
+load 'sd-plot-args.gpi'

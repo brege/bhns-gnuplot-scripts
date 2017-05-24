@@ -1,0 +1,84 @@
+# load palette config
+load 'styles.gpi'
+# load presets
+load 'run-paths-and-times.gpi'
+load 'unit-conversions.gpi'
+
+set origin 0, 0
+set multiplot
+
+data='DomainInfo.dat'
+set xrange [0:8]
+set macros
+
+# first plot, top left
+set title 'Total FD subdomains/cores'
+set xlabel '$t - t_{\rm settledisk}$ (ms)'
+set ylabel 'Ratio of subdomains/cores'
+set ytics nomirror
+unset y2tics
+unset y2label
+set key bottom right
+set size 0.5, 0.5
+set origin 0, 0.5
+col2="$3"
+e="every 1"
+load 'sd-plot-args.gpi
+
+data='TStepperDiag.dat'
+set xrange [0:8]
+set macros
+
+# second plot, top right
+set title 'Time step size for hot Nuclear-theory EOSs'
+set xlabel '$t - t_{\rm settledisk}$ (ms)'
+unset ytics
+unset ylabel
+set y2label 'Time step size (code units)'
+set y2tics nomirror
+set key top left
+set size 0.5, 0.5
+set origin 0.5, 0.5
+col2="$7"
+e="every 200"
+
+load 'sd-plot-args.gpi'
+
+
+data='GrDomainInfo.dat'
+set xrange [0:8]
+set macros
+
+# third plot, bottom left
+set title 'No. points on largest GR subdomain'
+set xlabel '$t - t_{\rm settledisk}$ (ms)'
+unset ytics
+unset ylabel
+set ylabel 'Number of points'
+set ytics nomirror
+unset y2tics
+unset y2label
+set key top right
+set size 0.5, 0.5
+set origin 0, 0
+col2="$5"
+e="every 1"
+load 'sd-plot-args.gpi
+
+# fourth plot, bottom right
+set title 'GR grid spacing of finest subdomain(s)'
+set xlabel '$t - t_{\rm settledisk}$ (ms)'
+unset ytics
+unset ylabel
+set y2range [0:1e-4]
+set y2label 'dx_min (spectral coords)'
+set y2tics nomirror
+set key top left
+set size 0.5, 0.5
+set origin 0.5, 0
+col2="$6"
+e="every 1"
+load 'sd-plot-args.gpi
+
+
+unset multiplot

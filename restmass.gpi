@@ -1,0 +1,24 @@
+# load palette config
+load 'styles.gpi'
+# load presets
+load 'run-paths-and-times.gpi'
+load 'unit-conversions.gpi'
+
+set title 'Neutron star mass in plunge-merger for hot Nuclear-theory EOSs'
+set xlabel '$t - t_{\rm plunge}$ (ms)'
+set ylabel '$M^b_{\rm NS}$ ($M_{\odot}$)'
+
+set ytics nomirror
+
+set xrange[0:15]
+
+data='MatterObservers/MassAvgs.dat'
+
+set macros
+load 'sp-macros.gpi'
+@SETKEYTR
+
+col2="$4"
+e=""
+
+load 'plot-args.gpi' 

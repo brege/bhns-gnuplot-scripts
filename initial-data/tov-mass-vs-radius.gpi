@@ -1,0 +1,31 @@
+# load palette config
+load '../styles.gpi'
+# load presets
+load '../run-paths-and-times.gpi'
+load '../unit-conversions.gpi'
+
+#set title 'TOV Sequences from Cold, $\beta$-Equilibrium Slices of the Equations of State'
+set xlabel 'Areal Radius (km)'
+set ylabel 'Gravitational Mass ($M_{\odot}$)'
+set xrange [10:16]
+
+set ytics nomirror
+
+set key top right
+
+set arrow from 10,1.2 to 16,1.2 nohead lt 0
+set arrow from 10,1.4 to 16,1.4 nohead lt 0
+
+
+set macros
+col1="$3*length_geo_mks*1e-3"
+col2="$2"
+
+e=""
+
+prefix='EOSVis/maketovsequence-'
+suffix='_ColdTable.dat'
+
+load 'plot-args.gpi'
+
+unset arrow

@@ -1,0 +1,27 @@
+# load palette config
+load 'styles.gpi'
+# load presets
+load 'run-paths-and-times.gpi'
+load 'unit-conversions.gpi'
+
+set title 'Time step size for hot Nuclear-theory EOSs'
+set xlabel '$t - t_{\rm plunge}$ (ms)'
+set ylabel 'Time step size (code units)'
+set y2label 'Time step size (ns)'
+set ytics nomirror
+min_t=1e-08
+max_t=5.5e-02
+set y2range [min_t*time_geo_mks*1e6:max_t*time_geo_mks*1e6]
+set ytics nomirror
+set y2tics nomirror
+
+data='TStepperDiag.dat'
+
+set macros
+col2="$7"
+load 'sp-macros.gpi'
+@SETKEYTR
+
+e="every 200"
+
+load 'plot-args.gpi'

@@ -1,0 +1,21 @@
+# load palette config
+load 'styles.gpi'
+# load presets
+load 'run-paths-and-times.gpi'
+load 'unit-conversions.gpi'
+
+set title 'Performance of BhNs Hydro-AMR Simulations'
+set xlabel '$t - t_{\rm plunge}$ (ms)'
+set ylabel 'dt/dT (code units)'
+set ytics nomirror
+
+data='TimeInfo.dat'
+
+set macros
+load 'sp-macros.gpi'
+@SETKEYTR
+
+col2="$7"
+e="every 20"
+
+load 'plot-args.gpi'

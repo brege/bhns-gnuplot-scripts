@@ -1,0 +1,21 @@
+# parameters to configure margins of each graph
+x0=0.1                      # left margin all graphs
+y0=0.90                     # top margin all graphs
+lengthx=0.4                 # horizonal length of each graph
+lengthy=0.4                 # vertical length of each graph
+spacex=0.00                 # horizontal space between each graph
+spacey=0.00                 # vertical space between each graph
+
+# This is a macro: configure the top, right, left, and bottom 
+# margins of each graph.  It will depend on the value of i and j.
+set macro
+i=0; j=0;
+SETMARGINS = "set tmargin at screen (y0-i*(lengthy+spacey));\
+              set bmargin at screen (y0-i*(lengthy+spacey)-lengthy);\
+              set lmargin at screen (x0+j*(lengthx+spacex));\
+              set rmargin at screen (x0+j*(lengthx+spacex)+lengthx)"
+POS = "at graph 0.92,0.9 font ',8'"
+
+set tics scale 0.5
+set ytics 1
+

@@ -1,0 +1,72 @@
+reset
+
+#set term pngcairo font 'Verdana,10' size 720,540
+set term epslatex size 5in,3.5in color dashed 11 fontscale 1.0
+
+## accretion rate
+#print "Making combined accretted mass rate plot"
+#set output 'images/combined-blackhole-mass.tex'
+#load 'blackhole-mass.gpi'
+#reset
+
+# baryon mass 
+print "Making combined NS baryon mass plot"
+set output 'images/combined-restmass.tex'
+load 'restmass.gpi'
+set output
+reset
+
+# time step
+print "Making combined timestep plot"
+set output 'images/combined-timestep.tex'
+load 'timestep.gpi'
+set output
+reset
+
+# neutrino luminosity
+print "Making combined neutrino luminosity plot"
+set output 'images/combined-neutrino-luminosity.tex'
+load 'neutrino-luminosity.gpi'
+set output
+reset
+
+# unbound mass
+print "Making combined unbound mass plot"
+set output 'images/combined-unbound-mass.tex'
+load 'unbound-mass.gpi'
+set output
+reset
+
+# average temperature
+print "Making combined average temperature plot"
+set output 'images/combined-average-temp.tex'
+load 'average-temp.gpi'
+set output
+reset
+
+# densest point
+print "Making combined densest point plot"
+set output 'images/combined-densest-point.tex'
+load 'densest-point.gpi'
+set output
+reset
+
+# average entropy for settledisk only
+print "Making average entropy for settledisk only"
+set output 'images/average-entropy-sd.tex'
+load 'average-entropy-sd.gpi'
+set output
+reset
+
+# unbound ye for settledisk only
+print "Making unbound electron fraction for settledisk only"
+set output 'images/unbound-ye-sd.tex'
+load 'unbound-ye-sd.gpi'
+set output
+reset
+
+
+# reset to x11 terminal so we can plot other stuff...
+set term x11
+
+print "All done!"

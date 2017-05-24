@@ -1,0 +1,24 @@
+# load palette config
+load 'styles.gpi'
+# load presets
+load 'run-paths-and-times.gpi'
+load 'unit-conversions.gpi'
+
+set title 'Accreted mass in merger for hot Nuclear-theory EOSs'
+set xlabel '$t - t_{\rm settle}$ (ms)'
+set ylabel '$\chi_{\rm BH}$)'
+
+set yrange [0.88:0.925]
+set ytics nomirror
+unset logscale y
+
+data='ApparentHorizon/Spin_AhA.dat'
+
+set macros
+load 'sp-macros.gpi'
+@SETKEYTL
+
+col2="$5"
+e=""
+
+load 'sd-plot-args.gpi'

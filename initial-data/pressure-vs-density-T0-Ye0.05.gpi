@@ -1,0 +1,49 @@
+# load palette config
+load '../styles.gpi'
+# load presets
+load '../run-paths-and-times.gpi'
+load '../unit-conversions.gpi'
+
+#set title 'Pressure vs. Density for Barotropic (Cold, $\beta$-Eq) Equations of State'
+set xlabel 'Density (g/cm$^3$)'
+#set x2label 'Density ($G=c=M_{\odot}=1$)'
+set ylabel 'Pressure (barye)'
+#set y2label 'Pressure ($G=c=M_{\odot}=1$)'
+
+min_rho_geo=1e-7
+max_rho_geo=1e-2
+set xrange [min_rho_geo*density_geo_cgs:max_rho_geo*density_geo_cgs]
+#set x2range [min_rho_geo:max_rho_geo]
+set xtics nomirror
+#set x2tics nomirror
+set logscale x
+#set logscale x2
+
+min_p_geo=1e-10
+max_p_geo=1e-1
+set yrange [min_p_geo*pressure_geo_cgs:max_p_geo*pressure_geo_cgs]
+#set y2range [min_p_geo:max_p_geo]
+set ytics nomirror
+#set y2tics nomirror
+set logscale y
+#set logscale y2
+
+rho_sat_cgs=5.01187e14
+
+set grid x2tics
+set arrow  from rho_sat_cgs,min_p_geo*pressure_geo_cgs to rho_sat_cgs,max_p_geo*pressure_geo_cgs nohead lt 0
+
+set key top left
+
+set macros
+col1="$1*density_geo_cgs"
+col2="$3*pressure_geo_cgs"
+
+e=""
+
+prefix='Analysis/EOS/'
+suffix='_T0_Ye0.05.dat'
+
+load 'plot-args.gpi'
+
+unset arrow

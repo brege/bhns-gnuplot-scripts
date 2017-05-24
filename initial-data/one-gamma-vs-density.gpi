@@ -1,0 +1,50 @@
+# load palette config
+load '../styles.gpi'
+# load presets
+load '../run-paths-and-times.gpi'
+load '../unit-conversions.gpi'
+
+#set title 'Pressure vs. Density for Barotropic (Cold, $\beta$-Eq) Equations of State'
+set xlabel 'Density (g/cm$^3$)'
+#set x2label 'Density ($G=c=M_{\odot}=1$)'
+set ylabel '$\tilde{\Gamma}$'
+#set y2label 'Pressure ($G=c=M_{\odot}=1$)'
+
+min_rho_geo=1e-7
+max_rho_geo=1e-2
+set xrange [min_rho_geo*density_geo_cgs:max_rho_geo*density_geo_cgs]
+#set x2range [min_rho_geo:max_rho_geo]
+set xtics nomirror
+#set x2tics nomirror
+set logscale x
+#set logscale x2
+
+min_gamma_geo=0
+max_gamma_geo=5
+set yrange [min_gamma_geo:max_gamma_geo]
+#set y2range [min_p_geo:max_p_geo]
+set ytics nomirror
+#set y2tics nomirror
+unset logscale y
+#set logscale y2
+
+set grid x2tics
+
+load './gamma-labels.gpi'
+
+d2(x,y) = ($0 == 0) ? (x1 = x, y1 = y, 1/0) : (x2 = x1, x1 = x, y2 = y1, y1 = y, (y1-y2)/(x1-x2))
+
+
+set key top left Left reverse
+
+set macros
+col1="$1*density_geo_cgs"
+col2="d2(log($1),log($3))"
+
+e=""
+
+prefix='Analysis/EOS/'
+suffix='_T0.7_Ye0.3.dat'
+
+load 'plot-args.gpi'
+
