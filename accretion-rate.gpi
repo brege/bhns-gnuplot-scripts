@@ -8,6 +8,7 @@ set title 'Accretion rate dM/dt in plunge-merger for hot Nuclear-theory EOSs'
 set xlabel '$t - t_{\rm plunge}$ (ms)'
 set ylabel 'Rest Mass ($M_{\odot}$)'
 
+set xrange [2:9]
 set ytics nomirror
 
 d2(x,y) = ($0 == 0) ? (x1 = x, y1 = y, 1/0) : (x2 = x1, x1 = x, y2 = y1, y1 = y, (y1-y2)/(x1-x2))

@@ -10,7 +10,7 @@ set ylabel '$M^b_{\rm NS}$ ($M_{\odot}$)'
 
 set ytics nomirror
 
-set xrange[0:15]
+set xrange[2:9]
 
 data='MatterObservers/MassAvgs.dat'
 

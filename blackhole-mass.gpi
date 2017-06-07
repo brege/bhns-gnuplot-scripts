@@ -8,6 +8,7 @@ set title 'Accreted mass in merger for hot Nuclear-theory EOSs'
 set xlabel '$t - t_{\rm plunge}$ (ms)'
 set ylabel '[Christodoulou] $M_{\rm BH} - M^{\rm init}_{\rm BH}$ ($M_{\odot}$)'
 
+set xrange [2:9]
 set yrange [1e-8:0.8]
 set ytics nomirror
 unset logscale y
