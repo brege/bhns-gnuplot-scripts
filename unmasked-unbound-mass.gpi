@@ -1,0 +1,21 @@
+# load palette config
+load 'styles.gpi'
+# load presets
+load 'run-paths-and-times.gpi'
+load 'unit-conversions.gpi'
+
+set title 'Unbound mass in merger for hot Nuclear-theory EOSs'
+set xlabel '$t - t_{\rm plunge}$ (ms)'
+set ylabel 'unbound mass ($M_{\odot}$)'
+set ytics nomirror
+
+data='MatterObservers/UnboundMass.dat'
+
+set macros
+load 'sp-macros.gpi'
+@SETKEYTL
+
+col2="$2"
+e=""
+
+load 'plot-args.gpi'
