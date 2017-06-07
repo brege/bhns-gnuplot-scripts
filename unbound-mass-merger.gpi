@@ -15,7 +15,7 @@ data='MatterObservers/UnboundMass.dat'
 
 set macros
 load 'sp-macros.gpi'
-@SETKEYTL
+@SETKEYBR
 
 col2="$3"
 e=""

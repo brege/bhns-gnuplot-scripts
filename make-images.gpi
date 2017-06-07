@@ -1,7 +1,7 @@
 reset
 
 #set term pngcairo font 'Verdana,10' size 720,540
-set term epslatex size 5in,3.5in color dashed 11 fontscale 1.0
+set term epslatex size 5 in,3.5 in color dashed 11 fontscale 1.0
 
 ## accretion rate
 #print "Making combined accretted mass rate plot"
