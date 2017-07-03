@@ -1,0 +1,6 @@
+plot \
+ej1.data u (@col1):(@col2) smooth freq with boxes  @e  ls 1 lw @lw t 'M12-M7-S9-DD2',\
+ej2.data u (@col1):(@col2) smooth freq with boxes  @e  ls 2 lw @lw t 'M14-M7-S9-DD2',\
+ej3.data u (@col1):(@col2) smooth freq with boxes  @e  ls 3 lw @lw t 'M12-M7-S9-FSU21',\
+ej4.data u (@col1):(@col2) smooth freq with boxes  @e  ls 4 lw @lw t 'M14-M7-S9-FSU21',\
+ej5.data u (@col1):(@col2) smooth freq with boxes  @e  ls 5 lw @lw t 'M12-M7-S9-SFHo',\

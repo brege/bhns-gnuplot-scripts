@@ -1,0 +1,25 @@
+# load palette config
+load '../styles.gpi'
+# load presets
+load '../run-paths-and-times.gpi'
+load '../unit-conversions.gpi'
+
+set xlabel '$ Y_e $'
+set ylabel '$\log_{10}(M_{\rm ej})$ ($M_{\odot}$)'
+
+set ytics nomirror
+
+set xrange[0:0.25]
+set yrange[1e-5:1e-1]
+set logscale y
+data='TailAnalysis/YeBin.agr'
+
+set macros
+load '../sp-macros.gpi'
+@SETKEYTR
+
+col1="$1"
+col2="$2"
+e=""
+
+load 'tail-plot-args.gpi' 
