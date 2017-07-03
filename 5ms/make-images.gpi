@@ -1,0 +1,65 @@
+reset
+
+#set term pngcairo font 'Verdana,10' size 720,540
+set term epslatex size 5 in,3.5 in color dashed 11 fontscale 1.0
+
+#######################
+# DISK PROFILES
+#######################
+
+print "Making disk profile: density vs. r"
+set output 'images/density-of-disk.tex'
+load 'density-of-disk.gpi'
+set output
+reset
+
+print "Making disk profile: temperature vs. r"
+set output 'images/temperature-of-disk.tex'
+load 'temperature-of-disk.gpi'
+set output
+reset
+
+print "Making disk profile: entropy vs. r"
+set output 'images/entropy-of-disk.tex'
+load 'entropy-of-disk.gpi'
+set output
+reset
+
+print "Making disk profile: composition vs. r"
+set output 'images/composition-of-disk.tex'
+load 'composition-of-disk.gpi'
+set output
+reset
+
+#######################
+# TAIL PROFILES
+#######################
+
+print "Making tail histograms: unbound-mass vs. Vinf"
+set output 'images/unbound-mass-vs-Vinf.tex'
+load 'unbound-mass-vs-Vinf.gpi'
+set output
+reset
+
+print "Making tail histograms: unbound-mass vs. phi"
+set output 'images/unbound-mass-vs-phi.tex'
+load 'unbound-mass-vs-phi.gpi'
+set output
+reset
+
+print "Making tail histograms: unbound-mass vs. costheta"
+set output 'images/unbound-mass-vs-costheta.tex'
+load 'unbound-mass-vs-costheta.gpi'
+set output
+reset
+
+print "Making tail histograms: unbound-mass vs. Ye"
+set output 'images/unbound-mass-vs-Ye.tex'
+load 'unbound-mass-vs-Ye.gpi'
+set output
+reset
+
+# reset to x11 terminal so we can plot other stuff...
+set term x11
+
+print "All done!"
