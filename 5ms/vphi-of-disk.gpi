@@ -1,0 +1,23 @@
+# load palette config
+load '../styles.gpi'
+# load presets
+load '../run-paths-and-times.gpi'
+load '../unit-conversions.gpi'
+
+set xlabel '$ R ({\rm km}) $'
+set ylabel '$ v_{\phi}/c $'
+
+set ytics nomirror
+
+set xrange[20:110]
+
+data='DiskAnalysis/vphiAvg.dat'
+
+set macros
+load '../sp-macros.gpi'
+@SETKEYTR
+col1="$1*length_geo_mks/1000"
+col2="$2"
+e=""
+
+load 'disk-plot-args.gpi' 

@@ -1,0 +1,29 @@
+# load palette config
+load '../styles.gpi'
+# load presets
+load '../run-paths-and-times.gpi'
+load '../unit-conversions.gpi'
+
+set xlabel '$ R ({\rm km}) $'
+set ylabel '$\log_{10}(\rho_0) {\rm (cgs)}$'
+
+set ytics nomirror
+min_rho_geo=1e-7
+max_rho_geo=1e-5
+set yrange [min_rho_geo*density_geo_cgs:max_rho_geo*density_geo_cgs]
+set ytics nomirror
+set logscale y
+
+set xrange[20:110]
+
+data='DiskAnalysis/Rho0PhysAvg.dat'
+
+set macros
+load '../sp-macros.gpi'
+@SETKEYTR
+col1="$1*length_geo_mks/1000"
+#col2="log($2*density_geo_cgs)"
+col2="$2*density_geo_cgs"
+e=""
+
+load 'disk-plot-args.gpi' 
